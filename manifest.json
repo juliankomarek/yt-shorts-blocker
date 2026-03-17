@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Tweaks",
+  "version": "1.0",
+  "description": "Redirects homepage to subscriptions and hides Shorts.",
+  "permissions": [
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
